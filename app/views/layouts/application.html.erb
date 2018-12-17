@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <%= csrf_meta_tags %>
+
+    <title><%= yield(:title) %> | Z Dates - Live Connections</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag '//fonts.googleapis.com/icon?family=Material+Icons' %>
+    <%= stylesheet_link_tag '//fonts.googleapis.com/css?family=Roboto:300,400,500,700' %>
+    <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+    <%= yield :head %>
+  </head>
+
+  <body class="<%= yield :class %>" data-features="<%= yield :features %>">
+    <%= render 'layouts/header' %>
+    <div class="wrapper">
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' unless content_for :devise_view %>
+  </body>
+</html>

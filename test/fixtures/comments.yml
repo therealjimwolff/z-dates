@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+comment1:
+  user: anakin
+  post: the_force
+  content: A comment
+
+comment2:
+  user: luke
+  post: podracer
+  content: Another comment

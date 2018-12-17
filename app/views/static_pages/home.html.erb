@@ -1,0 +1,35 @@
+<% provide(:title, 'Home') %>
+
+<% if user_signed_in? %>
+  <% content_for :features, "profile-page" %>
+  <% content_for :class, "profile-page" %>
+
+  <div class="header header-filter" style="background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);"></div>
+    <div class="main main-raised">
+      <div class="profile-content">
+          <div class="container">
+            <div class="row">
+
+              <div class="profile">
+                <div class="col-md-3">
+                  <%= render 'shared/user_info', user: current_user %>
+                  <%= render 'posts/post_form' %>
+                </div>
+              </div>
+
+              <div class="col-md-8 col-md-offset-1">
+                <div class="text-center">
+                  <h3 class="title text-primary">Your Feed</h3>
+                </div>
+                <%= render @feed_items %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <%= render 'static_pages/landing' %>
+<% end %>

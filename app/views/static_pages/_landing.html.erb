@@ -1,0 +1,59 @@
+<% content_for :features, "landing-page" %>
+<% content_for :class, "landing-page" %>
+
+<div class="header header-filter" style="background-image: url('<%= image_path('landing_background.jpg') %>');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="title">Welcome.</h1>
+        <h4>This is your space to find friendship. This is your space to rekindle lost loves, reconnect with old pals, and grow with new friends. But mainly, this is a space where I could being to make a MVP for Z Dates. This is Z Dates.</h4>
+        <%= link_to 'Sign up!', new_user_registration_path, class: 'btn btn-danger btn-raised btn-lg' %>
+        <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-white btn-raised btn-lg' %>
+        <h6>Or use</h6>
+        <%= link_to  user_facebook_omniauth_authorize_path, class: "btn btn-raised btn-info" do %>
+          <i class="fa fa-facebook-official fa-3x"></i>
+        <% end%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main main-raised">
+  <div class="container">
+    <div class="section text-center section-landing">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2 class="title">About Z Dates - Live Connections</h2>
+            <h5 class="description">
+              This site is an amazing place to connect.
+              Built using Rails, this site is the Marvin and Zeola Gaye dating platform for
+              <a href="https://www.commandsoft.com/csaat/csaat.php">Lorem ipsum dolor</a>'s Currently written in Rails.
+              This project utilizes RESTful resources, MVC architecture, user authentication and authorization, data model relationships, third-party API integration, and testing.
+            </h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="section text-center">
+      <h2 class="title">About Sarah Crawford</h2>
+      <div class="team">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="team-player">
+              <%= image_tag("me_bw.png", alt: "Thumbnail Image", class: "img-raised img-circle") %>
+              <h4 class="title">Hi, I'm Sarah <br />
+                <small class="text-muted">Z Dates Member</small>
+              </h4>
+              <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sagittis massa in efficitur efficitur. Praesent nec malesuada purus. Pellentesque cursus odio eu nisl malesuada, eu maximus dolor luctus. Curabitur scelerisque ultrices nisi. Aliquam a dui ac elit dignissim tempor. Donec fermentum, purus id tempor molestie, velit ipsum vehicula ante, ut euismod turpis velit tempus elit. Nunc et vehicula est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut magna et elit lobortis ultricies ac non magna.
+              </p>
+              <a href="https://www.linkedin.com/in/jim-wolff-51b55063/" class="btn btn-just-icon"><i class="fa fa-linkedin"></i></a>
+              <a href="https://github.com/therealjimwolff" class="btn btn-just-icon"><i class="fa fa-github"></i></a>
+              <a href="mailto:jim.wolff@gmail.com" target="_top" class="btn btn-just-icon"><i class="fa fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

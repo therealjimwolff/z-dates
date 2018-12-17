@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="content">
+    <li class="media">
+      <div class="media-left">
+        <%= gravatar_for(favorite.user, size: 80, classes: 'media-object') %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-header"><%= link_to favorite.user.name, user_path(favorite.user) %></h4>
+        <p><%= favorite.content %></p>
+      </div>
+    </li>
+  </div>
+</div>

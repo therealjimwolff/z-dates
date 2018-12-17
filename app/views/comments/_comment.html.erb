@@ -1,0 +1,16 @@
+<li class="media">
+  <div class="content">
+    <div class="media-left">
+      <%= gravatar_for(comment.user, size: 80, classes: 'media-object') %>
+    </div>
+    <div class="media-body">
+      <h5 class="media-haeding"><%= link_to comment.user.name, user_path(comment.user), class: 'text-info' %></h5>
+      <p><%= comment.content %></p>
+      <p class="text-muted">Posted <%= time_ago_in_words(comment.created_at) %> ago.</p>
+
+      <% if current_user.comments.include?(comment) %>
+        <%= link_to 'Delete', comment_path(comment.id), method: :delete, class: 'btn btn-danger btn-raised btn-sm' %>
+      <% end %>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="content">
+    <li class="media">
+
+      <div class="media-left">
+        <%= gravatar_for(post.user, size: 80, classes: 'media-object') %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= link_to post.user.name, user_path(post.user) %></h4>
+        <p><%= post.content %></p>
+        <p class="text-muted">Posted <%= time_ago_in_words(post.created_at) %> ago.</p>
+        <p class="text-warning"><%= "#{post.likes.count} #{'person'.pluralize(post.likes.count)}" %> <i class="fa fa-heart"></i> this.</p>
+
+        <%= link_to "Delete", post_path(post), method: :delete, class: "btn btn-danger btn-sm btn-raised" if current_user.posts.include?(post) %> 
+
+        <ul class="media-list">
+          <%= render post.comments %>
+        </ul>
+
+
+        <div class="button-group">
+          <% unless post.user == current_user %>
+            <% if current_user.liked_posts.include?(post) %>
+              <%= render 'users/unlike', post: post %>
+            <% else %>
+              <%= render 'users/like', post: post %>
+            <% end %>
+          <% end %>
+
+          <button class="btn btn-primary btn-just-icon dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-pencil"></i>
+          </button>
+          <div class="col-md-12 dropdown-menu">
+            <%= render 'comments/comment_form', post: post %>
+          </div>
+        </div>
+      </div>
+    </li>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<% provide(:title, 'All Users') %>
+
+<div class="header header-filter" style="background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);"></div>
+  <div class="main main-raised">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-center">All Users</h2>
+          <%= will_paginate %>
+          <ul class="list-group">
+            <% @users.each do |user| %>
+              <%= render 'users/friend', friend: user %>
+            <% end %>
+          </ul>
+          <%= will_paginate %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

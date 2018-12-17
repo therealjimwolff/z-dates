@@ -1,0 +1,49 @@
+<% provide(:title, "Friend Requests") %>
+
+<div class="header header-filter" style="background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);"></div>
+  <div class="main main-raised">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-center">Friend Requests</h2>
+            <ul class="nav nav-pills nav-justified">
+              <li class="active">
+                <a href="#received" data-toggle="tab" aria-expanded="true">
+                  <i class="material-icons">call_received</i>
+                  Receieved
+                </a>
+              </li>
+              <li class="">
+                <a href="#sent" data-toggle="tab" aria-expanded="false">
+                  <i class="material-icons">call_made</i>
+                  Sent
+                </a>
+              </li>
+            </ul>
+
+            <div id="myTabContent" class="tab-content">
+              <div class="tab-pane fade active in" id="received">
+                <% if @received.empty? %>
+                  <div class="content">
+                    <h4>You have no received requests.</h4>
+                  </div>
+                <% else %>
+                  <%= render 'received' %>
+                <% end %>
+              </div>
+              <div class="tab-pane fade" id="sent">
+                <% if @sent.empty? %>
+                  <div class="content">
+                    <h4>You have no sent requests.</h4>
+                  </div>
+                <% else %>
+                  <%= render 'sent' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

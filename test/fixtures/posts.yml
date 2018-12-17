@@ -1,0 +1,14 @@
+the_force:
+  content: 'The force is strong with this one.'
+  created_at: <%= 10.minutes.ago %>
+  user: luke
+
+podracer:
+  content: 'My podracer broke down!'
+  created_at: <%= 3.years.ago %>
+  user: anakin
+
+most_recent:
+  content: 'This is really the fixture I care about.'
+  created_at: <%= Time.zone.now %>
+  user: anakin
